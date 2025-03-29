@@ -1,0 +1,494 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.9),
+    rgba(248, 248, 248, 0.8)
+  );
+  color: #333;
+  line-height: 1.6;
+  padding-top: 0; /* To prevent content from hiding under fixed navbar */
+}
+
+/* Navigation Bar */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #1a1a1a;
+  padding: 10px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+header .logo {
+  color: white;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 8px 20px;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s;
+  border-radius: 5px;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: #ff8800;
+  transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: #ff8800;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* Hero Section */
+.hero {
+  background: url("images/background-images/IMG_2025.jpg") center/cover
+    no-repeat;
+  height: 100vh; /* Adjust this to fit the height of your section */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+  transition: background 0.5s ease;
+}
+
+.hero::after {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  animation: fadeIn 1s ease-out;
+}
+
+.hero h1 {
+  font-size: 70px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.hero p {
+  font-size: 22px;
+  margin-bottom: 40px;
+}
+
+.btn {
+  background-color: #ff8800;
+  color: white;
+  padding: 18px 36px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #ff6600;
+  transform: scale(1.05);
+}
+
+/* Hero Section Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* About Section */
+.about,
+.shop,
+.contact {
+  padding: 60px 30px;
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.8),
+    rgba(248, 248, 248, 0.7)
+  );
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin: 40px 0;
+}
+
+.about h2,
+.shop h2,
+.contact h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  animation: slideIn 1s ease-in-out;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Contact Form */
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.contact input,
+.contact textarea {
+  padding: 15px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+  border-color: #ff8800;
+  box-shadow: 0 0 8px rgba(255, 136, 0, 0.6);
+}
+
+.contact button {
+  padding: 15px;
+  border: none;
+  background-color: #ff8800;
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.contact button:hover {
+  background-color: #ff6600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+footer {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 30px 0;
+  text-align: center;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+footer ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  position: relative;
+  transition: 0.3s;
+}
+
+footer ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: #ff8800;
+  transition: all 0.3s ease;
+}
+
+footer ul li a:hover {
+  color: #ff8800;
+}
+
+footer ul li a:hover::after {
+  width: 100%;
+}
+
+/* Booking Page */
+#booking-page {
+  background: #fff;
+  padding: 60px 40px;
+  max-width: 1000px;
+  margin: 80px auto;
+  border-radius: 12px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+#booking-page:hover {
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+  transform: scale(1.02);
+}
+
+#booking-page h2 {
+  font-size: 42px;
+  color: #333;
+  margin-bottom: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+  position: relative;
+  animation: slideIn 0.6s ease-in-out;
+}
+
+#booking-page p {
+  font-size: 18px;
+  margin-bottom: 40px;
+  text-align: center;
+  color: #555;
+  font-weight: 500;
+}
+
+/* Animation for the Heading */
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Booking Form */
+#booking-page form {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: 1fr;
+}
+
+#booking-page label {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+#booking-page label::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #ff8800;
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform 0.3s ease-out;
+}
+
+#booking-page label:hover::before {
+  transform: scaleX(1);
+  transform-origin: left center;
+}
+
+#booking-page input,
+#booking-page select,
+#booking-page textarea {
+  padding: 15px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#booking-page input:focus,
+#booking-page select:focus,
+#booking-page textarea:focus {
+  border-color: #ff8800;
+  box-shadow: 0 0 10px rgba(255, 136, 0, 0.6);
+}
+
+#booking-page button {
+  background-color: #ff8800;
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 18px 30px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+#booking-page button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background-color: #ff6600;
+  transition: all 0.4s ease;
+  border-radius: 50%;
+  z-index: -1;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+#booking-page button:hover {
+  background-color: #ff6600;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+#booking-page button:hover::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Icon inside Input Fields */
+#booking-page input[type="text"],
+#booking-page input[type="email"],
+#booking-page select,
+#booking-page textarea {
+  width: 100%;
+  padding-left: 50px; /* Add space for icons */
+}
+
+/* Placeholder Style */
+#booking-page input::placeholder,
+#booking-page textarea::placeholder {
+  color: #aaa;
+  font-style: italic;
+  transition: color 0.3s ease;
+}
+
+/* Active State Placeholder */
+#booking-page input:focus::placeholder,
+#booking-page textarea:focus::placeholder {
+  color: #ff8800;
+}
+
+/* Material Design for Form Elements */
+#booking-page input,
+#booking-page select,
+#booking-page textarea {
+  border-radius: 12px;
+  border: 2px solid #ccc;
+  padding: 18px;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #booking-page {
+    padding: 40px 20px;
+  }
+
+  #booking-page h2 {
+    font-size: 32px;
+  }
+
+  #booking-page p {
+    font-size: 16px;
+  }
+
+  #booking-page form {
+    gap: 25px;
+  }
+
+  #booking-page button {
+    font-size: 16px;
+    padding: 16px 24px;
+  }
+}
+
+/* Input and Button Hover Effect */
+@keyframes hoverEffect {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+#booking-page input:focus,
+#booking-page textarea:focus,
+#booking-page button:hover {
+  animation: hoverEffect 0.3s ease-out;
+}

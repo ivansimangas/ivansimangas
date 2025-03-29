@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book a Lesson - Ivan Simangas</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">Ivan Simangas</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="booking-page">
+      <!-- Updated to use ID -->
+      <h2>Book a Lesson</h2>
+      <p>Fill out the form below, and I'll get back to you!</p>
+      <form id="booking-form">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required />
+        <label for="phone">Phone Number:</label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          required
+          pattern="[0-9]{10}"
+          placeholder="123-456-7890"
+        />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="instrument">Choose an Instrument:</label>
+        <select id="instrument" name="instrument" required>
+          <option value="guitar">Guitar</option>
+          <option value="piano">Piano</option>
+          <option value="drums">Drums</option>
+        </select>
+
+        <label for="message">Additional Info:</label>
+        <textarea id="message" name="message"></textarea>
+
+        <button type="submit" class="btn">Submit</button>
+      </form>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
